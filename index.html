@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SchichtBuddy</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f0f0f">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f0f0f">
+
+</head>
+<body>
+
+<div class="app">
+
+<header>
+  <button id="prevMonth">‹</button>
+  <div id="monthTitle"></div>
+  <button id="nextMonth">›</button>
+  <button id="todayBtn">●</button>
+  <button id="menuBtn">☰</button>
+</header>
+
+
+<div class="today" id="todayText"></div>
+
+<div class="weekdays">
+  <div>Mo</div><div>Di</div><div>Mi</div>
+  <div>Do</div><div>Fr</div><div>Sa</div><div>So</div>
+</div>
+
+<div class="calendar" id="calendar"></div>
+
+<div class="shift-picker">
+  <button data-shift="frueh" class="frueh">Früh</button>
+  <button data-shift="spaet" class="spaet">Spät</button>
+  <button data-shift="nacht" class="nacht">Nacht</button>
+  <button data-shift="frei" class="frei">Frei</button>
+</div>
+
+</div>
+
+<!-- MENÜ -->
+<div id="menu" class="overlay hidden">
+  <div class="box">
+    <h2>Menü</h2>
+
+    <button id="openCycle">Schichtzyklus</button>
+    <button id="openYear">Jahreskalender</button>
+
+
+    <button id="closeMenu">Schließen</button>
+  </div>
+</div>
+
+<!-- JAHRESKALENDER -->
+<div id="yearView" class="overlay hidden">
+  <div class="box">
+
+    <h2>Jahr auswählen</h2>
+
+    <select id="yearSelect"></select>
+
+    <div id="yearGrid"></div>
+
+    <button id="closeYear">Schließen</button>
+
+  </div>
+</div>
+
+
+<!-- ZYKLUS -->
+<div id="cycleView" class="overlay hidden">
+  <div class="box">
+    <h2>Schichtzyklus</h2>
+
+    <div class="cycle-add">
+      <select id="cycleType">
+        <option value="frueh">Früh</option>
+        <option value="spaet">Spät</option>
+        <option value="nacht">Nacht</option>
+        <option value="frei">Frei</option>
+      </select>
+      <input type="number" id="cycleDays" placeholder="Tage">
+      <button id="addCycle">+</button>
+    </div>
+
+    <div id="cycleList"></div>
+
+    <input type="date" id="cycleStart">
+    <button id="applyCycle">Zyklus anwenden</button>
+    <button id="clearCycle">Zyklus löschen</button>
+    <button id="closeCycle">Schließen</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
